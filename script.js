@@ -54,18 +54,28 @@ function startGame() {
 
 document.addEventListener("keyup", (event) => {
     if (inputAllowed && event.code === 'Space') {
-        if (!gameStarted) {
-            gameStarted = true;
-            speed = 300;
-        }
-        if (y + birdSize / 2 >= height) {
-            y = height - birdSize / 2;
-            velocity = 0;
-        } else {
-            velocity = boost;
-        }
+         flap();
     }
 });
+
+document.addEventListener("touch", (event) => {
+    if (inputAllowed) {
+        flap();
+    }
+});
+
+function flap(){
+    if (!gameStarted) {
+        gameStarted = true;
+        speed = 300;
+    }
+    if (y + birdSize / 2 >= height) {
+        y = height - birdSize / 2;
+        velocity = 0;
+    } else {
+        velocity = boost;
+    }
+}
 
 let timestamp = 0;
 
