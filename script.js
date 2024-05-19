@@ -58,7 +58,7 @@ document.addEventListener("keyup", (event) => {
     }
 });
 
-document.addEventListener("ontouchstart", (event) => {
+document.addEventListener("touchstart", (event) => {
     if (inputAllowed) {
         flap();
     }
